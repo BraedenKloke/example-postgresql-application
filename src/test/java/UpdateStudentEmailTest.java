@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Braeden Kloke
  * @version March 12, 2024
  */
-public class UpdateEmailTest {
+public class UpdateStudentEmailTest {
 
     public static void main(String[] args) {
         DBAccess dbAccess = new DBAccess();
