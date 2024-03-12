@@ -64,4 +64,22 @@ public class DBAccess {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Updates the email address for a student.
+     *
+     * @param studentId ID of student whose email address is to be updated.
+     * @param newEmail New email address.
+     */
+    public void updateStudentEmail(String studentId, String newEmail) {
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            String query = String.format("UPDATE students SET email = '%s' WHERE student_id = %d", newEmail, Integer.parseInt(studentId));
+            statement.execute(query);
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
