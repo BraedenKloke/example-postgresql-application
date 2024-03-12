@@ -4,6 +4,7 @@
 * Author: Braeden Kloke
 * Date: March 12, 2024
 
+
 # Summary
 Example application that connects to a PostgreSQL database to perform specific 
 CRUD (Create, Read, Update, Delete) operations.
@@ -14,10 +15,12 @@ Application functions include:
 * `updateStudentEmail(studentId, newEmail)`: Updates the email address for a student with the specified studentId.
 * `deleteStudent(studentId)`: Deletes the record of the student with the specified studentId.
 
+
 # Table of Contents
 1. [Build](#build)
-2. [Run](#run)
+2. [Test](#test)
 3. [Improvements](#improvements)
+
 
 <a id="build"></a>
 # Build
@@ -34,9 +37,10 @@ mvn compile
 mvn package
 ```
 
-<a id="run"></a>
-# Run
-In IntelliJ, simply run the `main` method.
+
+<a id="test"></a>
+# Test
+In IntelliJ, simply run the `main` method for any test class in `src/test/java`.
 
 
 <a id="improvements"></a>
@@ -45,3 +49,4 @@ In IntelliJ, simply run the `main` method.
 For example, in method addStudents, the function arguments are Strings but each arg needs to
 be wrapped in single quotes to make it a valid SQL value.
 For example, string `"Bob"` would need to be transformed into string `"'Bob'"`
+* Factor out DB connection in class DBAccess to a shared private method.

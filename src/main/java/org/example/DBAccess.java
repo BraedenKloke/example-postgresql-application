@@ -3,7 +3,7 @@ package org.example;
 import java.sql.*;
 
 /**
- * Class DBAccess interfaces with PostgreSQL to perform specific CRUD operations.
+ * Class DBAccess provides an interface to the database.
  *
  * @author Braeden Kloke
  * @version March 12, 2024
