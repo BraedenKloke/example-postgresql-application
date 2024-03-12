@@ -17,6 +17,7 @@ Application functions include:
 # Table of Contents
 1. [Build](#build)
 2. [Run](#run)
+3. [Improvements](#improvements)
 
 <a id="build"></a>
 # Build
@@ -36,3 +37,11 @@ mvn package
 <a id="run"></a>
 # Run
 In IntelliJ, simply run the `main` method.
+
+
+<a id="improvements"></a>
+# Improvements
+* Create helper methods to construct SQL queries. 
+For example, in method addStudents, the function arguments are Strings but each arg needs to
+be wrapped in single quotes to make it a valid SQL value.
+For example, string `"Bob"` would need to be transformed into string `"'Bob'"`
