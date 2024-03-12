@@ -17,9 +17,15 @@ Application functions include:
 
 
 # Table of Contents
-1. [Build](#build)
-2. [Test](#test)
-3. [Improvements](#improvements)
+1. [Video](#video)
+2. [Build](#build)
+3. [Test](#test)
+4. [Improvements](#improvements)
+
+
+<a id="build"></a>
+# Video
+Video explaining code available on YouTube [here](https://www.youtube.com/watch?v=0ygwlDNYwmo).
 
 
 <a id="build"></a>
