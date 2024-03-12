@@ -2,7 +2,7 @@
 * Course: COMP 3005 - Database Management Systems
 * Assignment: 3
 * Author: Braeden Kloke
-* Date: March 11, 2024
+* Date: March 12, 2024
 
 # Summary
 Example application that connects to a PostgreSQL database to perform specific 
@@ -21,9 +21,9 @@ Application functions include:
 <a id="build"></a>
 # Build
 
-## Create Database
-Use file `resources/sql/create-table-students.sql` to create the table `students` with PostgreSQL 
-in the database you will be connecting to.
+## Initialize Database
+Run file `resources/sql/initialize-db.sql` through your PostgreSQL interface of choice to create 
+and populate the table `students` in the database you will be connecting to.
 
 ## Build Artifacts
 Run: 
