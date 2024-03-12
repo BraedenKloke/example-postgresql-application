@@ -2,6 +2,9 @@ import org.example.DBAccess;
 
 /**
  * Test class to test getting all students from table students.
+ *
+ * @author Braeden Kloke
+ * @version March 12, 2024
  */
 public class GetAllStudentsTest {
 
