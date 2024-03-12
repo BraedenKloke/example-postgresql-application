@@ -82,4 +82,23 @@ public class DBAccess {
             throw new RuntimeException(e);
         }
     }
+
+
+    /**
+     * Deletes the record of a student.
+     *
+     * @param studentId ID of the student to be deleted.
+     */
+    public void deleteStudent(String studentId) {
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            String query = String.format("DELETE FROM students WHERE student_id = %d", Integer.parseInt(studentId));
+            statement.execute(query);
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
