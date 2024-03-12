@@ -10,9 +10,7 @@ import java.sql.*;
  */
 public class DBAccess {
 
-    String url;
-    String username;
-    String password;
+    String url, username, password;
 
     /**
      * Default constructor.
@@ -29,9 +27,14 @@ public class DBAccess {
     public void getAllStudents() {
         System.out.println("Displaying all students ...");
         try {
+            // Connect to DB
             Connection connection = DriverManager.getConnection(url, username, password);
+
+            // Create SQL query and execute
             Statement statement = connection.createStatement();
             statement.executeQuery("SELECT * FROM students");
+
+            // Display students table to user
             ResultSet resultSet = statement.getResultSet();
             while (resultSet.next()) {
                 System.out.print(resultSet.getString("student_id") + "\t");
@@ -40,6 +43,8 @@ public class DBAccess {
                 System.out.print(resultSet.getString("email") + "\t");
                 System.out.println(resultSet.getString("enrollment_date"));
             }
+
+            // Free resource
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -57,10 +62,15 @@ public class DBAccess {
     public void addStudent(String firstName, String lastName, String email, String enrollmentDate) {
         System.out.println("Adding student ...");
         try {
+            // Connect to DB
             Connection connection = DriverManager.getConnection(url, username, password);
+
+            // Create SQL query and execute
             Statement statement = connection.createStatement();
             String values = String.format("('%s', '%s', '%s', '%s')", firstName, lastName, email, enrollmentDate);
             statement.execute("INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES" + values);
+
+            // Free resource
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -76,10 +86,15 @@ public class DBAccess {
     public void updateStudentEmail(String studentId, String newEmail) {
         System.out.println("Updating student email ...");
         try {
+            // Connect to DB
             Connection connection = DriverManager.getConnection(url, username, password);
+
+            // Create SQL query and execute
             Statement statement = connection.createStatement();
             String query = String.format("UPDATE students SET email = '%s' WHERE student_id = %d", newEmail, Integer.parseInt(studentId));
             statement.execute(query);
+
+            // Free resource
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -95,10 +110,15 @@ public class DBAccess {
     public void deleteStudent(String studentId) {
         System.out.println("Deleting student ...");
         try {
+            // Connect to DB
             Connection connection = DriverManager.getConnection(url, username, password);
+
+            // Create SQL query and execute
             Statement statement = connection.createStatement();
             String query = String.format("DELETE FROM students WHERE student_id = %d", Integer.parseInt(studentId));
             statement.execute(query);
+
+            // Free resource
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
