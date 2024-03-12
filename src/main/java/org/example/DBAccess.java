@@ -57,7 +57,7 @@ public class DBAccess {
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
-            String values = "('" + firstName + "','" + lastName + "','" + email + "','" + enrollmentDate + "')";
+            String values = String.format("('%s', '%s', '%s', '%s')", firstName, lastName, email, enrollmentDate);
             statement.execute("INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES" + values);
             connection.close();
         } catch (SQLException e) {
