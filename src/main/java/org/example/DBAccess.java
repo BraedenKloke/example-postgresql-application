@@ -27,6 +27,7 @@ public class DBAccess {
      * Retrieves and displays all records from the students table.
      */
     public void getAllStudents() {
+        System.out.println("Displaying all students ...");
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
@@ -54,6 +55,7 @@ public class DBAccess {
      * @param enrollmentDate Enrollment date of student to add. Date format: "2024-03-12"
      */
     public void addStudent(String firstName, String lastName, String email, String enrollmentDate) {
+        System.out.println("Adding student ...");
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
@@ -72,6 +74,7 @@ public class DBAccess {
      * @param newEmail New email address.
      */
     public void updateStudentEmail(String studentId, String newEmail) {
+        System.out.println("Updating student email ...");
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
@@ -90,6 +93,7 @@ public class DBAccess {
      * @param studentId ID of the student to be deleted.
      */
     public void deleteStudent(String studentId) {
+        System.out.println("Deleting student ...");
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
